@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-main-white text-zinc-900 antialiased;
+    background-image: radial-gradient(
+      ellipse 90% 60% at 50% -15%,
+      rgba(26, 101, 158, 0.09),
+      transparent 55%
+    );
+  }
+}
+
+@layer components {
+  /* Layout */
+  .u-main-container {
+    @apply mx-auto max-w-6xl px-6 sm:px-10 lg:px-12;
+  }
+
+  .u-padding-content-container {
+    @apply pb-44 pt-28 sm:pt-32;
+  }
+
+  .u-articles-grid {
+    @apply mb-12 mt-6 grid list-none grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  /* Navbar */
+  .u-nav-link {
+    @apply text-sm font-medium text-zinc-600 transition-colors hover:text-lapis-lazuli;
+  }
+
+  .u-btn-primary {
+    @apply inline-flex shrink-0 items-center justify-center rounded-lg bg-lapis-lazuli px-4 py-2 text-sm font-medium text-white shadow-sm transition-all hover:bg-polynesian-blue hover:shadow-md active:scale-[0.98];
+  }
+
+  /* Cartes articles */
+  .u-article-card {
+    @apply relative list-none overflow-hidden rounded-2xl border border-zinc-200/90 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-lapis-lazuli/35 hover:shadow-lg hover:shadow-lapis-lazuli/[0.08];
+  }
+
+  .u-article-card-accent {
+    @apply pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-lapis-lazuli to-polynesian-blue opacity-0 transition-opacity duration-300;
+  }
+
+  .u-article-card:hover .u-article-card-accent {
+    @apply opacity-100;
+  }
+
+  /* Typographie */
+  .t-main-title {
+    @apply mb-3 font-inter text-4xl font-bold leading-tight tracking-tight text-zinc-900 md:text-5xl;
+  }
+
+  .t-main-subtitle {
+    @apply max-w-2xl text-lg leading-relaxed text-zinc-600;
+  }
+
+  .t-brand-accent {
+    @apply cursor-pointer text-lapis-lazuli transition-colors hover:text-polynesian-blue;
+  }
+
+  .t-section-title {
+    @apply text-sm font-semibold uppercase tracking-widest text-zinc-500;
+  }
+
+}
+/* Form  */
+.f-label {
+  @apply block mb-2 text-gray-700 font-semibold
+}
