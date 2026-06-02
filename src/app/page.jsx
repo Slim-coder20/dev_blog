@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { connectToDB } from "@/lib/utils/db/connectToDB";
 const posts = [
   {
     author: "Jhon Doe",
@@ -16,6 +16,7 @@ const posts = [
 ];
 
 export default async function Home() {
+  await connectToDB();
   return (
     <div className="u-main-container u-padding-content-container">
       <header className="mb-14">
