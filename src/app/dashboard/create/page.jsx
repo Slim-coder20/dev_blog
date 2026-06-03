@@ -1,18 +1,21 @@
 "use client";
 import React from "react";
+import { addPost } from "@/lib/serverActions/blog/postServerActions";
 
 export default function page() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
+ async function handleSubmit(e) {
+   e.preventDefault();
+   const formData = new FormData(e.target);
 
-    // une boucle for pour récupérer les valeurs du formulaire dans la console //
-    for (const [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-    // renitialise les champs du formulaire après la soumission du formulaire // 
-    e.target.reset();
-  }
+   // une boucle for pour récupérer les valeurs du formulaire dans la console //
+   for (const [key, value] of formData.entries()) {
+     console.log(key, value);
+   }
+
+   const result = await addPost(formData)
+   // renitialise les champs du formulaire après la soumission du formulaire //
+   e.target.reset();
+ }
 
   return (
     <main className="u-main-conatainer bg-white p-7 mt-32 mb-44">
