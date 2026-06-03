@@ -57,7 +57,7 @@ export default async function Home() {
                 </div>
 
                 <Link
-                  href={`/article/${post.title}`}
+                  href={`/article/${post.slug}`}
                   className="mt-auto text-lg font-semibold leading-snug text-zinc-900 transition-colors group-hover:text-lapis-lazuli"
                 >
                   {post.title}

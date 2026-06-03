@@ -34,6 +34,15 @@ export default function page() {
           placeholder="title"
           required
         />
+        <label htmlform="f-label">Author</label>
+        <input
+          type="text"
+          name="author"
+          className="shadow border rounded w-full p-3 mb-7 text-gray-700 focus:outline-slate-400"
+          id="author"
+          placeholder="author"
+          required
+        />
         <label htmlFor="markdownArticle" className="f-label">
           Write your using markdown - do not repeat the already given title
         </label>
