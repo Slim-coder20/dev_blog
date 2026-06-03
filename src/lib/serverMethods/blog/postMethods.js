@@ -11,3 +11,14 @@ export async function getPost(slug) {
     throw new Error("Failed to fetch post")
   }
 }
+
+export async function getPosts() {
+  try {
+    await connectToDB(); 
+    const posts = await Post.find({})
+    return posts; 
+    
+  } catch (error) {
+    
+  }
+}

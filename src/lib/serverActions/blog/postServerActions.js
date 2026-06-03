@@ -9,6 +9,7 @@ export async function addPost(formData) {
     const newPost = new Post({
       title,
       markdownArticle,
+      author, 
     });
     const savedPost = await newPost.save();
     console.log("Post saved succefully!");

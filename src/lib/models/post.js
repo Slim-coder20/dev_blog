@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Truculenta } from "next/font/google";
 import slugify from "slugify";
 
 const postSchema = new mongoose.Schema(
@@ -8,6 +9,10 @@ const postSchema = new mongoose.Schema(
       required: true,
     },
     markdownArticle: {
+      type: String,
+      required: true,
+    },
+    author: {
       type: String,
       required: true,
     },
